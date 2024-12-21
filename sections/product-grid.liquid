@@ -1,48 +1,21 @@
 <div class="product-grid-section">
-  <h2 class="grid-title">{{ section.settings.title }}</h2>
-  <div class="product-grid">
+    <h2 class="grid-title">{{ section.settings.title }}</h2>
+    <div class="product-grid">
       {% for block in section.blocks %}
-          {% if block.settings.product != blank %}
-              {% assign product = all_products[block.settings.product] %}
-              <div class="product-card" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
-                  <div class="product-card__image-container">
-                      <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" width="300" height="300">
-                  </div>
-                  <h3 class="product-card__title">{{ product.title }}</h3>
-              </div>
-          {% else %}
-              <div class="product-card product-card--empty">
-                  <p>Select a product</p>
-              </div>
-          {% endif %}
+        {% if block.settings.product != blank %}
+          {% assign product = all_products[block.settings.product] %}
+          <div class="product-card" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+            <div class="product-card__image-container">
+              <img src="{{ product.featured_image | img_url: 'medium' }}" 
+                   alt="{{ product.title }}" 
+                   width="250"  height="250"> </div>
+            <h3 class="product-card__title">{{ product.title }}</h3>
+          </div>
+        {% else %}
+          <div class="product-card product-card--empty">
+            <p>Select a product</p>
+          </div>
+        {% endif %}
       {% endfor %}
+    </div>
   </div>
-</div>
-
-{% schema %}
-{
-  "name": "Product Grid",
-  "settings": [
-      { "type": "text", "id": "title", "label": "Grid Title", "default": "Tisso vision in the wild" }
-  ],
-  "blocks": [
-      {
-          "type": "product",
-          "name": "Product",
-          "limit": 6,
-          "settings": [
-              { "type": "product", "id": "product", "label": "Product" }
-          ]
-      }
-  ],
-  "presets": [
-      {
-          "name": "Product Grid",
-          "blocks": [
-              {"type": "product"}, {"type": "product"}, {"type": "product"},
-              {"type": "product"}, {"type": "product"}, {"type": "product"}
-          ]
-      }
-  ]
-}
-{% endschema %}

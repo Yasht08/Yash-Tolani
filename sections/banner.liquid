@@ -1,41 +1,42 @@
 <div class="banner-section">
-  <div class="banner-top">
-      <h1 class="store-name">{{ section.settings.store_name }}</h1>
-      <p class="header-text">{{ section.settings.header_text }}</p>
-      <a href="{{ section.settings.choose_gift_link }}" class="choose-gift-button">
-          {{ section.settings.choose_gift_text }} <span class="arrow">→</span>
-      </a>
-  </div>
-  <div class="banner-image-container">
-      {% if section.settings.line_art_image %}
-          <img src="{{ section.settings.line_art_image | img_url: 'master' }}" alt="Line Art Background" width="{{ section.settings.line_art_image.width }}" height="{{ section.settings.line_art_image.height }}" loading="lazy">
-      {% endif %}
-      <div class="banner-text-content">
-          <h2 class="gift-guide-title">{{ section.settings.title }}</h2>
-          <p class="gift-guide-description">{{ section.settings.description }}</p>
-          <a href="{{ section.settings.button_link }}" class="shop-now-button">
-              {{ section.settings.button_text }} <span class="arrow">→</span>
-          </a>
-      </div>
-  </div>
-  <p class="banner-footer">{{ section.settings.footer_text }}</p>
+    <div class="banner-top">
+        <h1 class="store-name">{{ section.settings.store_name }}</h1>
+        <p class="header-text">{{ section.settings.header_text }}</p>
+        <a href="{{ section.settings.choose_gift_link }}" class="choose-gift-button">
+            {{ section.settings.choose_gift_text }} <span class="arrow">→</span>
+        </a>
+    </div>
+    <div class="banner-image-container">
+        {% if section.settings.line_art_image %}
+            {% assign image_size = section.settings.line_art_image %}
+            <img src="{{ section.settings.line_art_image | img_url: 'master' }}" 
+                 alt="Line Art Background" 
+                 loading="lazy"
+                 width="{{ image_size.width }}"
+                 height="{{ image_size.height }}"
+                 class="banner-line-art">
+        {% endif %}
+        <div class="banner-text-content">
+            </div>
+    </div>
+    <p class="banner-footer">{{ section.settings.footer_text }}</p>
 </div>
 
 {% schema %}
 {
-  "name": "Gift Guide Banner",
-  "settings": [
-      { "type": "text", "id": "store_name", "label": "Store Name", "default": "TISSO VISON" },
-      { "type": "text", "id": "header_text", "label": "Header Text", "default": "Find the ideal gift for your loved ones." },
-      { "type": "image_picker", "id": "line_art_image", "label": "Line Art Image" },
-      { "type": "text", "id": "title", "label": "Title", "default": "The Gift Guide" },
-      { "type": "textarea", "id": "description", "label": "Description" },
-      { "type": "text", "id": "button_text", "label": "Button Text", "default": "SHOP NOW" },
-      { "type": "url", "id": "button_link", "label": "Button Link" },
-      { "type": "text", "id": "footer_text", "label": "Footer Text" },
-      { "type": "text", "id": "choose_gift_text", "label": "Choose Gift Text", "default": "CHOOSE GIFT" },
-      { "type": "url", "id": "choose_gift_link", "label": "Choose Gift Link" }
-  ],
-  "presets": [{ "name": "Gift Guide Banner" }]
+    "name": "Gift Guide Banner",
+    "settings": [
+        { "type": "text", "id": "store_name", "label": "Store Name", "default": "TISSO VISON" },
+        { "type": "text", "id": "header_text", "label": "Header Text", "default": "Find the ideal gift for your loved ones." },
+        { "type": "image_picker", "id": "line_art_image", "label": "Line Art Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "The Gift Guide" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "text", "id": "button_text", "label": "Button Text", "default": "SHOP NOW" },
+        { "type": "url", "id": "button_link", "label": "Button Link" },
+        { "type": "text", "id": "footer_text", "label": "Footer Text" },
+        { "type": "text", "id": "choose_gift_text", "label": "Choose Gift Text", "default": "CHOOSE GIFT" },
+        { "type": "url", "id": "choose_gift_link", "label": "Choose Gift Link" }
+    ],
+    "presets": [{ "name": "Gift Guide Banner" }]
 }
 {% endschema %}
