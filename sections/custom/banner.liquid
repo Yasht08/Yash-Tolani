@@ -1,0 +1,92 @@
+<div class="banner-section">
+  <div class="banner-content">
+    <div class="banner-header">
+      <h1 class="banner-title animate-fade-in">{{ section.settings.store_name }}</h1>
+      <div class="banner-cta animate-slide-in">{{ section.settings.header_text }}</div>
+    </div>
+    
+    <div class="banner-image-container">
+      <div class="line-art-background">
+        <svg viewBox="0 0 800 400">
+          <!-- SVG line art elements -->
+          <g class="animate-draw">
+            <!-- Camera -->
+            <path d="M100,100 L200,100 L200,200 L100,200 Z" fill="none" stroke="currentColor"/>
+            <!-- Watch -->
+            <circle cx="300" cy="150" r="40" fill="none" stroke="currentColor"/>
+            <!-- Other items -->
+            <!-- Add more SVG paths for other line art elements -->
+          </g>
+        </svg>
+      </div>
+      
+      <div class="banner-text-content">
+        <h2 class="gift-guide-title animate-fade-up">{{ section.settings.title }}</h2>
+        <p class="gift-guide-description animate-fade-up-delay">{{ section.settings.description }}</p>
+        <a href="{{ section.settings.button_link }}" class="shop-now-button animate-fade-up-delay-2">
+          {{ section.settings.button_text }} 
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      
+      <div class="banner-footer animate-fade-in-delay">
+        {{ section.settings.footer_text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gift Guide Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "store_name",
+      "label": "Store Name",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover joy. Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Footer Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift Guide Banner",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

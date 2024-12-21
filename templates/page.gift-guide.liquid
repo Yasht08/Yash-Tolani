@@ -1,0 +1,11 @@
+{% layout 'theme.liquid' %}
+
+<div class="gift-guide-page" data-winter-jacket-id="{{ settings.winter_jacket_product }}">
+  {%- section 'custom-banner' -%}
+  {%- section 'custom-product-grid' -%}
+  {%- section 'custom-product-popup' -%}
+</div>
+
+{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+{{ 'gift-guide-animations.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'gift-guide.js' | asset_url }}" defer></script>

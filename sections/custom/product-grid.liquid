@@ -1,0 +1,80 @@
+<div class="product-grid-section">
+    <h2 class="grid-title animate-fade-up">{{ section.settings.title }}</h2>
+    
+    <div class="product-grid">
+      {% for block in section.blocks %}
+        {% if block.settings.product != blank %}
+          {% assign product = all_products[block.settings.product] %}
+          <div class="product-card animate-fade-up-delay-{{ forloop.index }}" 
+               data-product-id="{{ product.id }}" 
+               data-product-handle="{{ product.handle }}">
+            <div class="product-card__image-container">
+              <img
+                src="{{ product.featured_image | img_url: '500x' }}"
+                alt="{{ product.featured_image.alt | escape }}"
+                width="500"
+                height="500"
+                loading="lazy"
+                class="product-card__image"
+              >
+              
+              <div class="product-card__overlay">
+                <button class="quick-view-button" 
+                        data-product-id="{{ product.id }}"
+                        aria-label="Quick view {{ product.title }}">
+                  <span class="quick-view-icon">+</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="product-card product-card--empty animate-fade-up-delay-{{ forloop.index }}">
+            <div class="product-card__placeholder">
+              <span>Select a product</span>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Product Grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Grid Title",
+        "default": "Tisso vision in the wild"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Grid",
+        "blocks": [
+          {"type": "product"},
+          {"type": "product"},
+          {"type": "product"},
+          {"type": "product"},
+          {"type": "product"},
+          {"type": "product"}
+        ]
+      }
+    ]
+  }
+  {% endschema %}

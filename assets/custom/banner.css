@@ -1,0 +1,99 @@
+.banner-section {
+    background-color: #ffffff;
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .banner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .banner-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .banner-cta {
+    font-size: 1rem;
+  }
+  
+  .banner-image-container {
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    border: 1px solid #000;
+  }
+  
+  .line-art-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+  
+  .gift-guide-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .gift-guide-description {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .shop-now-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .shop-now-button:hover {
+    transform: translateX(10px);
+  }
+  
+  .shop-now-button .arrow {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .shop-now-button:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  .banner-footer {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .banner-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  
+    .gift-guide-title {
+      font-size: 2rem;
+    }
+  }
