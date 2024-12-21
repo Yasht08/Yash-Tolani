@@ -1,54 +1,13 @@
 <div id="ProductPopup" class="product-popup">
-    <div class="product-popup__content">
+  <div class="product-popup__content">
       <button class="popup-close-button" aria-label="Close popup">&times;</button>
-      
-      <div class="popup-grid">
-        <div class="popup-image-container">
-          <div class="popup-image-slider">
-            <div class="popup-image-track"></div>
-          </div>
-          <div class="popup-image-nav">
-            <button class="prev-image" aria-label="Previous image">&lt;</button>
-            <button class="next-image" aria-label="Next image">&gt;</button>
-          </div>
-        </div>
-        
-        <div class="popup-details">
-          <h2 class="popup-product-title"></h2>
-          <div class="popup-price-container">
-            <span class="popup-product-price"></span>
-            <span class="popup-compare-price"></span>
-          </div>
-          
-          <div class="popup-product-description"></div>
-          
-          <form class="popup-product-form">
-            <div class="popup-variant-selects"></div>
-            
-            <div class="popup-quantity">
-              <label for="Quantity">Quantity</label>
-              <div class="quantity-selector">
-                <button type="button" class="quantity-button minus" aria-label="Decrease quantity">-</button>
-                <input type="number" id="Quantity" name="quantity" value="1" min="1" aria-label="Product quantity">
-                <button type="button" class="quantity-button plus" aria-label="Increase quantity">+</button>
-              </div>
-            </div>
-            
-            <button type="submit" class="add-to-cart-button">
-              <span class="button-text">Add to Cart</span>
-              {% render 'loading-spinner' %}
-            </button>
-            
-            <div class="popup-error-message"></div>
-          </form>
-        </div>
-      </div>
-    </div>
+      <div class="popup-inner-content"></div>
   </div>
-  
-  {% schema %}
-  {
-    "name": "Product Popup",
-    "settings": []
-  }
-  {% endschema %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Popup",
+  "settings": []
+}
+{% endschema %}

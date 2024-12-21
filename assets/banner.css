@@ -15,7 +15,7 @@
 
 .banner-image-container {
   position: relative;
-  overflow: hidden; /* Prevents image overflow */
+  overflow: hidden;
 }
 
 .banner-image-container img {
@@ -30,17 +30,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #000; /* Or appropriate color based on the design*/
-  width: 100%; /* Ensure text stays within container */
-  padding: 20px; /* Add padding for better readability */
+  color: #000;
+  width: 100%;
+  padding: 20px;
 }
 
 .gift-guide-title {
-  font-size: 2em; /* Adjust as needed */
+  font-size: 2em;
   margin-bottom: 10px;
 }
 
-.shop-now-button, .choose-gift-button {
+.shop-now-button,
+.choose-gift-button {
   display: inline-flex;
   align-items: center;
   padding: 10px 20px;
@@ -49,33 +50,36 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* For hover effect */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
 }
 
-.shop-now-button:hover, .choose-gift-button:hover {
-  background-color: #333; /* Darker shade on hover */
+.shop-now-button:hover,
+.choose-gift-button:hover {
+  transform: scale(1.05);
+  background-color: #333;
 }
 
 .arrow {
   margin-left: 5px;
 }
-.banner-footer{
-    text-align: center;
-    margin-top: 20px;
+
+.banner-footer {
+  text-align: center;
+  margin-top: 20px;
 }
 
-/* Add media queries for responsiveness */
 @media (max-width: 768px) {
-    .banner-top{
-        flex-direction: column;
-        gap: 10px;
-    }
-    .banner-text-content{
-        position: relative;
-        transform: none;
-        top: auto;
-        left: auto;
-        text-align: center;
-        padding: 10px;
-    }
+  .banner-top {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .banner-text-content {
+      position: relative;
+      transform: none;
+      top: auto;
+      left: auto;
+      text-align: center;
+      padding: 10px;
+  }
 }
